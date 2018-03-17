@@ -5,10 +5,8 @@ var controls = new THREE.VRControls(camera);
 var effect = new THREE.VREffect(renderer);
 var manager = new WebVRManager(renderer, effect);
 
-var sceneEarth = new THREE.Scene();
-var sceneCloud = new THREE.Scene();
-var sceneMoon = new THREE.Scene();
 var sceneCube  = new THREE.Scene();
+var sceneSphere = new THREE.Scene();
 
 var meshCube = new THREE.Mesh();
 
@@ -55,7 +53,15 @@ function init() {
     meshCube.position.set(0, 0, -0.32);
     sceneCube.add( meshCube );
 
+    var meshSphere = new THREE.Mesh();
+    var materialSphere = new THREE.MeshLambertMaterial( { color: 0x0088ff, wireframe:true } );
+    var geometrySphere = new THREE.SphereGeometry(0.6,32,32);
+    meshSphere = new THREE.Mesh( geometrySphere, materialSphere );
+    meshSphere.position.set(0, 0, 0);
+    sceneSphere.add( meshSphere );
+
     scene.add( sceneCube );
+    scene.add( sceneSphere );
 }
 
 var lastRender = 0;
