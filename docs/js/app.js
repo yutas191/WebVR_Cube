@@ -1,6 +1,6 @@
 var scene = new THREE.Scene();
 var camera = new THREE.PerspectiveCamera(40, window.innerWidth / window.innerHeight, 0.1, 10000 );
-var renderer = new THREE.WebGLRenderer({antialias: true});
+var renderer = new THREE.WebGLRenderer();
 var controls = new THREE.VRControls(camera);
 var effect = new THREE.VREffect(renderer);
 var manager = new WebVRManager(renderer, effect);
