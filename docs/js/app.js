@@ -19,7 +19,7 @@ function init() {
   effect.setSize(window.innerWidth, window.innerHeight);
 
   var light = new THREE.DirectionalLight(0xFFFFFF);
-  light.position.set(2, 2, 2);
+  light.position.set(2, 2, 1);
   scene.add( light );
 
   var ambientLight = new THREE.AmbientLight(0x333333);
