@@ -11,22 +11,21 @@ var sceneSphere = new THREE.Scene();
 var meshCube = new THREE.Mesh();
 
 function init() {
-  renderer.setSize(window.innerWidth, window.innerHeight);
-  document.body.appendChild(renderer.domElement);
+    renderer.setSize(window.innerWidth, window.innerHeight);
+    document.body.appendChild(renderer.domElement);
 
-  controls.standing = true;
+    controls.standing = true;
 
-  effect.setSize(window.innerWidth, window.innerHeight);
+    effect.setSize(window.innerWidth, window.innerHeight);
 
-  var light = new THREE.DirectionalLight(0xFFFFFF);
-  light.position.set(2, 2, 1);
-  scene.add( light );
+    var light = new THREE.DirectionalLight(0xFFFFFF);
+    light.position.set(1.0, 1.0, 1.0);
+    scene.add( light );
 
-  var ambientLight = new THREE.AmbientLight(0x333333);
-  scene.add( ambientLight );
+    var ambientLight = new THREE.AmbientLight(0x888888);
+    scene.add( ambientLight );
 
-
-    var geometryCube = new THREE.BoxGeometry(0.05, 0.05, 0.05);
+    var geometryCube = new THREE.BoxGeometry(0.08, 0.08, 0.08);
     var loaderCube = new THREE.TextureLoader();
 
     switch(1) {
@@ -60,8 +59,8 @@ function init() {
     meshSphere.position.set(0, 0, 0);
     sceneSphere.add( meshSphere );
 
-    scene.add( sceneCube );
     scene.add( sceneSphere );
+    scene.add( sceneCube );
 }
 
 var lastRender = 0;
